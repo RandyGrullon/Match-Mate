@@ -1,11 +1,12 @@
 import React from "react";
-import SportCard from "../components/common/Card";
+import SportCard from "../components/common/Cards/SportCard";
 import Searchbar from "@/components/Searchbar";
 import BaseballIllustration from "../../public/images/baseball.svg";
 import FutbolIllustration from "../../public/images/futbol.svg";
 import PadelIllustration from "../../public/images/padel.svg";
 import TennisIllustration from "../../public/images/tennis.svg";
-
+import { useAuth } from "../context/AuthContext"
+import { useRouter } from "next/router";
 const sportInfo = [
   {
     name: "Padel",
@@ -108,6 +109,13 @@ const sportInfo = [
 ];
 
 const HomePage = () => {
+  const { user } = useAuth();
+  const router = useRouter();
+
+  // if (typeof window !== 'undefined' && !user) {
+  //   router.push('/auth/login');
+  // }
+
   return (
     <div className="bg-gray-100 min-h-screen p-4">
       <div className="text-center mb-8">

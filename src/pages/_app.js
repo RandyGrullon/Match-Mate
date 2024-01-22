@@ -1,12 +1,15 @@
-import React from 'react';
-import '../styles/globals.css';
-import PageLayout from '@/components/PageLayout';
+import React from "react";
+import "../styles/globals.css";
+import PageLayout from "@/components/PageLayout";
+import { AuthProvider } from "../context/AuthContext";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <PageLayout>
-      <Component {...pageProps} />
-    </PageLayout>
+    <AuthProvider>
+      <PageLayout>
+        <Component {...pageProps} />
+      </PageLayout>
+    </AuthProvider>
   );
 }
 
