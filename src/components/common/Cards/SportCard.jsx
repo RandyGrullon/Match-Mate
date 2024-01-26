@@ -12,10 +12,7 @@ const SportCard = ({ name, image, quantity, limitOfPlayers, location }) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-1 ">
       <div className="rounded-lg shadow-lg overflow-hidden">
-        <div className="absolute inset-0 ">
-          
-        </div>
-
+        <div className="absolute inset-0 "></div>
         <div className="">
           <Image
             className="object-center object-cover h-auto w-full rounded-t-lg"

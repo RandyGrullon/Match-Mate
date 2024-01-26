@@ -9,7 +9,7 @@ const TeamsPage = () => {
   ];
 
   return (
-    <div className="bg-gray-100 min-h-screen p-4">
+    <div className="bg-gray-100 min-h-screen">
       <div className="max-w-md mx-auto">
         {teams.map((team) => (
           <TeamDetails key={team.id} teamName={team.name} members={team.members} />

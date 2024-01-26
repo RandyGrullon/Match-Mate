@@ -2927,6 +2927,11 @@ react-responsive@^9.0.2:
     prop-types "^15.6.1"
     shallow-equal "^1.2.1"
 
+react-spinners@^0.13.8:
+  version "0.13.8"
+  resolved "https://registry.yarnpkg.com/react-spinners/-/react-spinners-0.13.8.tgz#5262571be0f745d86bbd49a1e6b49f9f9cb19acc"
+  integrity sha512-3e+k56lUkPj0vb5NDXPVFAOkPC//XyhKPJjvcGjyMNPWsBKpplfeyialP74G7H7+It7KzhtET+MvGqbKgAqpZA==
+
 react-tournament-bracket@^0.2.4:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/react-tournament-bracket/-/react-tournament-bracket-0.2.4.tgz#3c9926a7017573b17b5a3dc85604c3c5c975ccf1"
