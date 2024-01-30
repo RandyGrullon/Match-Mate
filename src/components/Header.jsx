@@ -1,14 +1,14 @@
 // components/Header.jsx
 import React from "react";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import MatchMateLogo from "../../public/images/match-mate-logo.svg";
 import NotificationBellCounter from "./NotificationBellCounter";
+import MessageIcon from "./Imbox/MessageIcon";
 
 const Header = () => {
   const notificacionesCount = 3;
+
   return (
     <div className="fixed inset-x-0 top-0 md:hidden flex justify-between items-center bg-white">
       {/* Logo */}
@@ -22,9 +22,12 @@ const Header = () => {
       </Link>
 
       {/* Icono de campana para notificaciones */}
-      <div className="ml-8">
+      <div className="flex gap-2 mr-3">
         <NotificationBellCounter count={notificacionesCount} />
+        <MessageIcon />
       </div>
+
+      {/* Icono de mensaje */}
     </div>
   );
 };

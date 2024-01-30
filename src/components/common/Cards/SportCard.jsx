@@ -12,18 +12,17 @@ const SportCard = ({ name, image, quantity, limitOfPlayers, location }) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-1 ">
       <div className="rounded-lg shadow-lg overflow-hidden">
-        <div className="absolute inset-0 "></div>
         <div className="">
           <Image
-            className="object-center object-cover h-auto w-full rounded-t-lg"
+            className="bg-white border-b-2 object-center object-cover h-auto w-full rounded-t-lg"
             src={image}
             alt="photo"
-            width={5}
-            height={5}
+            width={500}
+            height={500}
           />
         </div>
 
-        <div className=" py-8 sm:py-6 bg-white">
+        <div className=" py-3 sm:py-4 bg-white">
           <p className="text-xl text-black font-bold m-2 pl-2">{name}</p>
           {/* Dos cuadros separados */}
           <div className="flex justify-between px-4 text-center">

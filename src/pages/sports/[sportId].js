@@ -8,7 +8,7 @@ const sportInfo = [
   {
     id: 1,
     name: "Padel",
-    illustration: "/images/padel.svg",
+    illustration: "/images/padel.png",
     quantity: 2,
     limitOfPlayers: 4,
     location: "Padel Republic",
@@ -16,7 +16,7 @@ const sportInfo = [
   {
     id: 2,
     name: "Futbol",
-    illustration: "/images/futbol.svg",
+    illustration: "/images/futbol.png",
     quantity: 6,
     limitOfPlayers: 10,
     location: "SoccerTown",
@@ -24,7 +24,7 @@ const sportInfo = [
   {
     id: 3,
     name: "Tennis",
-    illustration: "/images/tennis.svg",
+    illustration: "/images/tennis.png",
     quantity: 2,
     limitOfPlayers: 4,
     location: "Club Naco",
@@ -32,7 +32,7 @@ const sportInfo = [
   {
     id: 4,
     name: "Baseball",
-    illustration: "/images/baseball.svg",
+    illustration: "/images/baseball.png",
     quantity: 9,
     limitOfPlayers: 18,
     location: "Estadio Patria Mella",
@@ -67,7 +67,7 @@ const SportPage = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 text-black">
       {sport ? (
         <>
           <div className="flex items-center mb-4 text-black">
