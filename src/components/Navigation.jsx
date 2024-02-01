@@ -50,7 +50,7 @@ const Navbar = () => {
           </Link>
 
           {/* agregar uno para comunidad y un icono de world */}
-          <Link href="/Community" passHref className={linkClassDesktop}>
+          <Link href="/community" passHref className={linkClassDesktop}>
             <FontAwesomeIcon
               icon={faEarthAsia}
               size="lg"
@@ -100,7 +100,7 @@ const Navbar = () => {
               </Link>
 
               {/* Tab 4 */}
-              <Link href="/Community" passHref className={linkClassMobile}>
+              <Link href="/community" passHref className={linkClassMobile}>
                 <FontAwesomeIcon
                   icon={faEarthAsia}
                   size="lg"
