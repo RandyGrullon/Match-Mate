@@ -13,7 +13,7 @@ const Conversation = ({ data }) => {
     <>
     <div
       onClick={toggleMessageArea}
-      className="cursor-pointer relative text-black"
+      className="cursor-pointer  text-black "
       >
       {/* Renderiza la información de la conversación */}
       <div className="flex items-center gap-2 p-2 hover:bg-gray-100">
@@ -24,11 +24,13 @@ const Conversation = ({ data }) => {
             <p className="text-sm text-gray-500">12:00</p>
           </div>
           <p className="text-sm text-gray-500">
-           {
-              data.message.map((message, index) => {
-                return <span key={index}>{message}</span>
-              })
-           }
+           {/* map data.message */}
+            {data.message.map((message) => (
+              <div key={message.id}>
+                <span className="font-bold">User:</span>
+                <span>{message.message}</span>
+              </div>
+            ))}
           </p>
         </div>
       </div>

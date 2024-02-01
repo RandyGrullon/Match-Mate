@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const ConversationPage = ({ isOpen, onClose, data }) => {
   return (
     <div
-      className={`text-black fixed inset-y-0 right-0 w-full min-h-screen bg-white overflow-y-scroll transition-transform duration-500 transform ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+      className={` text-black fixed inset-y-0 right-0 w-full min-h-screen bg-white overflow-y-scroll transition-transform duration-500 transform ${isOpen ? "translate-x-0" : "translate-x-full"}`}
     >
       <div className="px-4 border-b-2">
         <div className="flex pt-3 w-full justify-between">
@@ -15,7 +15,6 @@ const ConversationPage = ({ isOpen, onClose, data }) => {
           <div></div>
         </div>
       </div>
-      
     </div>
   );
 };

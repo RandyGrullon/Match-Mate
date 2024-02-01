@@ -6,7 +6,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 const MessageArea = ({ isOpen, onClose }) => {
   return (
     <div
-      className={`text-black fixed inset-y-0 right-0 w-full bg-white overflow-y-scroll transition-transform duration-500 transform ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+      className={` text-black fixed inset-y-0 right-0 w-full bg-white overflow-y-scroll transition-transform duration-500 transform ${isOpen ? "translate-x-0" : "translate-x-full"}`}
     >
       <div className="px-4 border-b-2">
         <div className="flex pt-3 w-full justify-between">
