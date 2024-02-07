@@ -1,6 +1,6 @@
 // components/SportImage.jsx
 import React from "react";
-import SportImageSource from "./SportImageSource"; // Crea este componente si no existe
+import SportImageSource from "./SportImageSource";
 
 const SportImage = ({ sport }) => {
   return (
