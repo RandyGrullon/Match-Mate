@@ -6,6 +6,7 @@ import SportCard from "@/components/common/Cards/SportCard";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Pagination from "@/components/Pagination"; // Ruta al componente Pagination
 import { sportInfo } from "../../../public/data/sportInfo";
 
 const SportSelected = () => {
@@ -13,7 +14,9 @@ const SportSelected = () => {
   const router = useRouter();
 
   const [isLoading, setIsLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(0);
   const [selectedSportInfo, setSelectedSportInfo] = useState([]);
+  const ITEMS_PER_PAGE = 5; // Cantidad de elementos por página
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,13 +29,10 @@ const SportSelected = () => {
   useEffect(() => {
     const sportName = router.query.sportId;
 
-    // Filtrar los datos del deporte seleccionado
     if (sportName) {
       if (sportName === "All") {
-        // Si se selecciona "All", mostrar todos los deportes
         setSelectedSportInfo(sportInfo);
       } else {
-        // De lo contrario, filtrar por deporte seleccionado
         const filteredSportInfo = sportInfo.filter(
           (sport) => sport.name === sportName
         );
@@ -41,23 +41,32 @@ const SportSelected = () => {
     }
   }, [router.query]);
 
+  // Función para cambiar de página
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+
+  // Calcula los elementos que se mostrarán en la página actual
+  const filteredSportInfo = selectedSportInfo.slice(
+    currentPage * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE + ITEMS_PER_PAGE
+  );
+
   return (
     <>
       {isLoading ? (
-        <>
-          <LoadingSpinner />
-        </>
+        <LoadingSpinner />
       ) : (
         <div className="min-h-screen">
           <div className="text-center text-4xl font-bold text-black">
-            <h1 className="">Welcome to </h1>
-            <h1 className="">MatchMate</h1>
+            <h1>Welcome to</h1>
+            <h1>MatchMate</h1>
           </div>
           <div className="p-4">
             <Searchbar />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4 text-black">
-            {selectedSportInfo.map((sport) => (
+            {filteredSportInfo.map((sport) => (
               <SportCard
                 key={sport.id}
                 id={sport.id}
@@ -68,6 +77,13 @@ const SportSelected = () => {
                 location={sport.location}
               />
             ))}
+          </div>
+          <div className="flex  justify-center mt-4 text-black ">
+            <Pagination
+              pageCount={Math.ceil(selectedSportInfo.length / ITEMS_PER_PAGE)}
+              onPageChange={handlePageChange}
+              initialPage={currentPage}
+            />
           </div>
         </div>
       )}
